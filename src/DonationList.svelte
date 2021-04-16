@@ -18,7 +18,7 @@
         Amount
       </th>
       <th>
-        Method donated
+        Method
       </th>
     </thead>
     <tbody class="uk-text-left">
