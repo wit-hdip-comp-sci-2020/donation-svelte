@@ -1,4 +1,8 @@
 <script>
+  import CandidateList from "./CandidateList.svelte"
 </script>
 
-<h1> Donation Client Application </h1>
+<div class="uk-container">
+  <h1> Donation Client Application </h1>
+  <CandidateList/>
+</div>
