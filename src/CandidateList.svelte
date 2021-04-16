@@ -1,5 +1,13 @@
 <script>
-  export let candidateList;
+  import {onMount} from 'svelte'
+  import { DonationService } from "./donation-service";
+
+  const donationService = new DonationService("http://localhost:4000");
+
+  let candidateList;
+  onMount(async () => {
+    candidateList = await donationService.getCandidates()
+  })
 </script>
 
 <h3 class="uk-heading-divider">
