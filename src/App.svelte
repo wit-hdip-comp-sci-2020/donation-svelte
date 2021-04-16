@@ -15,6 +15,7 @@
     "/login": Login,
     "/candidates": Candidates,
     "/donations": Donations,
+    "/logout" : Main
   }
 </script>
 
