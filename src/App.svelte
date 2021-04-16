@@ -1,12 +1,13 @@
 <script>
   import {onMount} from 'svelte'
   import CandidateList from "./CandidateList.svelte"
+  import { DonationService } from "./donation-service";
 
-  const url = `http://localhost:4000/api/candidates`;
+  const donationService = new DonationService("http://localhost:4000");
+
   let candidateList;
   onMount(async () => {
-    const response = await fetch(url)
-    candidateList = await response.json();
+    candidateList = await donationService.getCandidates()
   })
 </script>
 
