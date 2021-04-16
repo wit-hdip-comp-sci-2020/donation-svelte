@@ -1,6 +1,13 @@
 <script>
   import CandidateList from "../components/CandidateList.svelte";
   import homer4 from "/src/assets/homer4.jpeg";
+  import {navBar, mainBar, subTitle, title} from "../stores"
+
+  title.set("Donation Services Inc.");
+  subTitle.set("All Current Candidates");
+  navBar.set({
+    bar: mainBar
+  });
 </script>
 
 <div class="uk-text-center" uk-grid>
