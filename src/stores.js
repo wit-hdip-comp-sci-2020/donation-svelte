@@ -1,4 +1,4 @@
-import { writable } from "svelte/store";
+import {writable} from "svelte/store";
 
 export const welcomeBar = [
   {
@@ -25,6 +25,11 @@ export const mainBar = [{
   icon: "fas fa-clipboard-list fa-3x",
   colour: "color:rgb(63, 122, 139)",
   link: "/#/candidates",
+}, {
+  title: "Logout",
+  icon: "fas fa-sign-out-alt fa-3x",
+  colour: "color:rgb(156, 70, 128)",
+  link: "/#/logout",
 }];
 
 export const navBar = writable({
