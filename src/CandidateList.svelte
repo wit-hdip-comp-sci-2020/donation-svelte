@@ -18,13 +18,15 @@
       </th>
     </thead>
     <tbody class="uk-text-left">
-      {#each candidateList as candidate}
-        <tr>
-          <td>{candidate.lastName}</td>
-          <td>{candidate.firstName}</td>
-          <td>{candidate.office}</td>
-        </tr>
-      {/each}
+      {#if candidateList}
+        {#each candidateList as candidate}
+          <tr>
+            <td>{candidate.lastName}</td>
+            <td>{candidate.firstName}</td>
+            <td>{candidate.office}</td>
+          </tr>
+        {/each}
+      {/if}
     </tbody>
   </table>
 </div>

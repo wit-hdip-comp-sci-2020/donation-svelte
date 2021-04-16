@@ -1,15 +1,13 @@
 <script>
+  import {onMount} from 'svelte'
   import CandidateList from "./CandidateList.svelte"
 
-  const candidateList = [{
-    "firstName": "Lisa",
-    "lastName": "Simpson",
-    "office": "President"
-  }, {
-    "firstName": "Donald",
-    "lastName": "Simpson",
-    "office": "President"
-  }];
+  const url = `http://localhost:4000/api/candidates`;
+  let candidateList;
+  onMount(async () => {
+    const response = await fetch(url)
+    candidateList = await response.json();
+  })
 </script>
 
 <div class="uk-container">
