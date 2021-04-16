@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
   import {title, subTitle, navBar, welcomeBar} from "../stores"
   import homer2 from "/src/assets/homer2.png";
   title.set("Donation Services Inc");

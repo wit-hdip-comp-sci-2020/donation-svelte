@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
   import homer from "/src/assets/homer.png"
   import {title, subTitle} from "../stores.js"
 </script>
