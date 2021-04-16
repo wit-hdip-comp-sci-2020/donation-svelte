@@ -1,8 +1,7 @@
 <script>
-  import {onMount} from 'svelte'
+  import {onMount, getContext} from 'svelte'
   import { DonationService } from "./donation-service";
-
-  const donationService = new DonationService("http://localhost:4000");
+  const donationService = getContext("DonationService");
 
   let candidateList;
   onMount(async () => {
