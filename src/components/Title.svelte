@@ -1,5 +1,6 @@
 <script lang="ts">
   import homer from "/src/assets/homer.png"
+
   export let title;
   export let subTitle;
 </script>
@@ -7,7 +8,7 @@
 <div class="uk-width-2-3@m  uk-card uk-card-default uk-padding-small uk-visible@m">
   <div class="uk-grid">
     <div class="uk-width-1-6@m">
-      <img src="{homer}" width="60" alt="img" />
+      <a href="/"> <img src="{homer}" width="60" alt="img"/> </a>
     </div>
     <div class="uk-width-expand@m uk-text-left">
       <div class="title">
