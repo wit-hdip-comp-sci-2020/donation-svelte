@@ -1,6 +1,7 @@
 <script>
   import {setContext} from "svelte";
   import {DonationService} from "./services/donation-service";
+  import Main from "./pages/Main.svelte"
   import Candidates from "./pages/Candidates.svelte";
   import Donations from "./pages/Donations.svelte";
   import Navigator from "./components/Navigator.svelte";
@@ -9,6 +10,7 @@
   setContext("DonationService", new DonationService("http://localhost:4000"));
 
   let routes = {
+    "/" : Main,
     "/candidates": Candidates,
     "/donations": Donations,
   }
