@@ -1,6 +1,6 @@
 <script>
   import homer from "/src/assets/homer.png"
-  import {title, subTitle} from "../stores.js"
+  import {title, subTitle, user} from "../stores.js"
 </script>
 
 <div class="uk-width-2-3@m  uk-card uk-card-default uk-padding-small uk-visible@m">
@@ -22,7 +22,7 @@
           <i class="fas fa-donate fa-3x" style="color:rgb(95, 96, 173)" title="Source repo" pos="bottom" uk-tooltip></i>
         </div>
         <div class="uk-width-expand@m uk-text-left">
-          <div class="uk-text-muted uk-text-center" style="font-size:xx-small">Donation 0.1</div>
+          <div class="uk-text-muted uk-text-center" style="font-size:xx-small">{$user.firstName} {$user.lastName}</div>
         </div>
       </a>
     </div>
