@@ -1,4 +1,5 @@
 import axios from "axios";
+import { user } from "../stores";
 
 export class DonationService {
   candidateList = [];
@@ -32,6 +33,7 @@ export class DonationService {
   async login(email, password) {
     try {
       const response = await axios.post(`${this.baseUrl}/api/users/authenticate`, {email, password});
+      user.set(response.data);
       return response.status == 200;
     } catch (error) {
       return false;
