@@ -37,4 +37,18 @@ export class DonationService {
       return false;
     }
   }
+
+  async donate(amount, method, candidate) {
+    try {
+      const donation = {
+        amount: amount,
+        method: method,
+        candidate: candidate,
+      };
+      const response = await axios.post(this.baseUrl + "/api/candidates/" + candidate._id + "/donations", donation);
+      return response.status == 200;
+    } catch (error) {
+      return false;
+    }
+  }
 }
