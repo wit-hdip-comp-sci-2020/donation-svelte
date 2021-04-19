@@ -5,6 +5,7 @@
   import Login from "./pages/Login.svelte"
   import Candidates from "./pages/Candidates.svelte";
   import Donations from "./pages/Donations.svelte";
+  import Donate from "./pages/Donate.svelte";
   import Navigator from "./components/Navigator.svelte";
   import Router from "svelte-spa-router";
 
@@ -15,6 +16,7 @@
     "/login": Login,
     "/candidates": Candidates,
     "/donations": Donations,
+    "/donate": Donate,
     "/logout" : Main
   }
 </script>
