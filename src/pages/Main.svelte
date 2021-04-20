@@ -1,12 +1,16 @@
 <script>
   import {title, subTitle, navBar, welcomeBar} from "../stores"
   import homer2 from "/src/assets/homer2.png";
+  import {getContext} from "svelte";
+  const donationService = getContext("DonationService");
+
   title.set("Donation Services Inc");
   subTitle.set("Sign up or Log in");
 
   navBar.set({
     bar: welcomeBar
   });
+  donationService.logout();
 </script>
 
 <div class="uk-text-center" uk-grid>

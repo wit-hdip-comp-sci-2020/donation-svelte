@@ -1,5 +1,5 @@
 import axios from "axios";
-import { user } from "../stores";
+import {user} from "../stores";
 
 export class DonationService {
   candidateList = [];
@@ -38,6 +38,16 @@ export class DonationService {
     } catch (error) {
       return false;
     }
+  }
+
+  async logout() {
+    user.set({
+      firstName: "",
+      lastName: "",
+      email: "",
+      password: "",
+      _id: ""
+    });
   }
 
   async donate(amount, method, candidate) {
