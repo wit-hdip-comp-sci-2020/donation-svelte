@@ -1,6 +1,5 @@
 <script>
   import {onMount, getContext} from 'svelte'
-  import { DonationService } from "../services/donation-service";
   const donationService = getContext("DonationService");
 
   let candidateList;
