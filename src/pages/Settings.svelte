@@ -4,7 +4,7 @@
   import SettingsForm from "../components/SettingsForm.svelte";
 
   title.set("Donation Services Inc");
-  subTitle.set("Please Sign up");
+  subTitle.set("Edits and then save your settings");
 
   navBar.set({
     bar: mainBar
