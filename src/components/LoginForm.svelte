@@ -10,7 +10,7 @@
   async function login() {
     let success = await donationService.login(email, password)
     if (success) {
-      push("/candidates");
+      push("/donate");
     } else {
       email = "";
       password = "";
