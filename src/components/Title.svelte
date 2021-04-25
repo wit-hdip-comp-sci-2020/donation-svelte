@@ -22,7 +22,7 @@
           <i class="fas fa-donate fa-3x" style="color:rgb(95, 96, 173)" title="Source repo" pos="bottom" uk-tooltip></i>
         </div>
         <div class="uk-width-expand@m uk-text-left">
-          <div class="uk-text-muted uk-text-center" style="font-size:xx-small">{$user.firstName} {$user.lastName}</div>
+          <div class="uk-text-muted uk-text-center" style="font-size:xx-small">{$user.email} </div>
         </div>
       </a>
     </div>
