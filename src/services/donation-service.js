@@ -33,8 +33,15 @@ export class DonationService {
   async login(email, password) {
     try {
       const response = await axios.post(`${this.baseUrl}/api/users/authenticate`, {email, password});
-      user.set(response.data);
-      return response.status == 200;
+      axios.defaults.headers.common["Authorization"] = "Bearer " + response.data.token;
+      user.set({
+        email: email,
+        token: response.data.token
+      });
+      if (response.data.success) {
+        return true;
+      }
+      return false;
     } catch (error) {
       return false;
     }
@@ -42,12 +49,10 @@ export class DonationService {
 
   async logout() {
     user.set({
-      firstName: "",
-      lastName: "",
       email: "",
-      password: "",
-      _id: ""
+      token: ""
     });
+    axios.defaults.headers.common["Authorization"] = "";
   }
 
   async donate(amount, method, candidate) {
