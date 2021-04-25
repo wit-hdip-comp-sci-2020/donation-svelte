@@ -55,9 +55,6 @@ export const title = writable("");
 export const subTitle = writable("");
 
 export const user = writable({
-  firstName: "",
-  lastName: "",
   email: "",
-  password: "",
-  _id: ""
+  token: ""
 });
