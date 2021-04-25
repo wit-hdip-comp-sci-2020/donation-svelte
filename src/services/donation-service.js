@@ -8,6 +8,9 @@ export class DonationService {
 
   constructor(baseUrl) {
     this.baseUrl = baseUrl;
+    if (localStorage.donation !== 'null') {
+      axios.defaults.headers.common["Authorization"] = "Bearer " + JSON.parse(localStorage.donation);
+    }
   }
 
   async getCandidates() {
@@ -34,11 +37,12 @@ export class DonationService {
     try {
       const response = await axios.post(`${this.baseUrl}/api/users/authenticate`, {email, password});
       axios.defaults.headers.common["Authorization"] = "Bearer " + response.data.token;
-      user.set({
-        email: email,
-        token: response.data.token
-      });
       if (response.data.success) {
+        user.set({
+          email: email,
+          token: response.data.token
+        });
+        localStorage.donation = JSON.stringify(response.data.token);
         return true;
       }
       return false;
@@ -53,6 +57,7 @@ export class DonationService {
       token: ""
     });
     axios.defaults.headers.common["Authorization"] = "";
+    localStorage.donation = null;
   }
 
   async donate(amount, method, candidate) {
