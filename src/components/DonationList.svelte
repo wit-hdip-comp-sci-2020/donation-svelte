@@ -20,6 +20,12 @@
       <th>
         Method
       </th>
+      <th>
+        Candidate
+      </th>
+      <th>
+        Donor
+      </th>
     </thead>
     <tbody class="uk-text-left">
       {#each donationList as donation}
@@ -29,6 +35,12 @@
           </td>
           <td>
             {donation.method}
+          </td>
+          <td>
+            {donation.candidate.lastName}, {donation.candidate.firstName}
+          </td>
+          <td>
+            {donation.donor.lastName},  {donation.donor.firstName}
           </td>
         </tr>
       {/each}
