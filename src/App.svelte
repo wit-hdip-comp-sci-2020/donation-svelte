@@ -7,6 +7,7 @@
   import Candidates from "./pages/Candidates.svelte";
   import Donations from "./pages/Donations.svelte";
   import Donate from "./pages/Donate.svelte";
+  import Analysis from "./pages/Analysis.svelte";
   import Settings from "./pages/Settings.svelte";
   import Navigator from "./components/Navigator.svelte";
   import Router from "svelte-spa-router";
@@ -20,6 +21,7 @@
     "/candidates": Candidates,
     "/donations": Donations,
     "/donate": Donate,
+    "/analysis": Analysis,
     "/settings" : Settings,
     "/logout" : Main
   }
