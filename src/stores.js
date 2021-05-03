@@ -29,6 +29,12 @@ export let mainBar = [
     link: "/#/donations",
   },
   {
+    title: "Analysis",
+    icon: "fas fa-chart-line fa-3x",
+    colour: "color:rgb(149, 93, 176)",
+    link: "/#/donations",
+  },
+  {
     title: "Candidates",
     icon: "fas fa-clipboard-list fa-3x",
     colour: "color:rgb(63, 122, 139)",
