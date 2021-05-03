@@ -2,11 +2,13 @@
   import { onMount, getContext } from "svelte";
   const donationService = getContext("DonationService");
 
+  export let justDonated;
+
   let candidateList = [];
   let amount = 0;
   let selectedMethod = 0;
   let selectedCandidate = 0;
-  let methods = ["Paypal", "Cash"]
+  let methods = ["paypal", "direct"]
   let errorMessage = "";
 
   onMount(async () => {
@@ -16,7 +18,7 @@
   async function donate() {
     const success = await donationService.donate(amount, methods[selectedMethod], candidateList[selectedCandidate])
     if (success) {
-
+      if (justDonated) justDonated();
     } else {
       errorMessage = "Donation not completed - some error occurred";
     }

@@ -1,13 +1,22 @@
 <script>
   import homer from "/src/assets/homer.png";
   import {navBar, mainBar, subTitle, title} from "../stores"
-  import Chart from "../components/Chart.svelte";
+  import Chart from 'svelte-frappe-charts';
 
   title.set("Donation Services Inc.");
   subTitle.set("Analysis");
   navBar.set({
     bar: mainBar
   });
+
+  let data = {
+    labels: ['Sun', 'Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat'],
+    datasets: [
+      {
+        values: [10, 12, 3, 9, 8, 15, 9]
+      }
+    ]
+  };
 </script>
 
 <div class="uk-flex-middle uk-text-center" uk-grid>
@@ -18,7 +27,7 @@
   </div>
   <div class="uk-width-1-2@m ">
     <div class="uk-card uk-card-default uk-card-body uk-box-shadow-large uk-width-2xlarge ">
-      <Chart/>
+      <Chart data={data} type="line" />
     </div>
   </div>
 </div>
