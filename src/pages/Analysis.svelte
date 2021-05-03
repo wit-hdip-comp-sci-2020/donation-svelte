@@ -2,6 +2,7 @@
   import {mainBar, navBar, subTitle, title} from "../stores"
   import Chart from 'svelte-frappe-charts';
   import {getContext, onMount} from "svelte";
+  import DonateForm from "../components/DonateForm.svelte";
 
   const donationService = getContext("DonationService");
 
@@ -55,13 +56,16 @@
 
 <div class="uk-flex-middle uk-text-center" uk-grid>
   <div class="uk-width-1-2@m ">
-    <div class="uk-card uk-card-default uk-card-body uk-box-shadow-large uk-width-2xlarge ">
+    <div class="uk-card uk-card-default uk-card-body uk-box-shadow-large uk-width-2xlarge uk-margin">
       <Chart data={paymentData} type="pie"/>
+    </div>
+    <div class="uk-card uk-card-default uk-card-body uk-box-shadow-large uk-width-2xlarge uk-margin">
+      <Chart data={donationsData} type="bar"/>
     </div>
   </div>
   <div class="uk-width-1-2@m ">
-    <div class="uk-card uk-card-default uk-card-body uk-box-shadow-large uk-width-2xlarge ">
-      <Chart data={donationsData} type="bar"/>
+    <div class="uk-card uk-card-default uk-card-body uk-box-shadow-large uk-width-2xlarge uk-margin">
+      <DonateForm/>
     </div>
   </div>
 </div>
