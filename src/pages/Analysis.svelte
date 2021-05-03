@@ -12,6 +12,8 @@
     bar: mainBar
   });
 
+  let candidates = [];
+  let donationsList = [];
   let paymentData = {
     labels: ["paypal", "direct"],
     datasets: [
@@ -29,7 +31,8 @@
       }
     ]
   }
-  onMount(async () => {
+
+  async function refreshCharts() {
     let donationList = await donationService.getDonations();
     donationList.forEach(donation => {
       if (donation.method == "paypal") {
@@ -38,19 +41,31 @@
         paymentData.datasets[0].values[1] += donation.amount
       }
     })
+    donationsData.datasets[0].values = [];
+    candidates.forEach((candidate, i) => {
+      donationList.forEach(donation => {
+        if (donation.candidate._id == candidate._id) {
+          if (!donationsData.datasets[0].values[i]) {
+            donationsData.datasets[0].values[i] = donation.amount;
+          } else {
+            donationsData.datasets[0].values[i] += donation.amount;
+          }
+        }
+      });
+    });
+  }
 
-    let candidates = await donationService.getCandidates()
+  function justDonated() {
+    refreshCharts();
+  }
+
+  onMount(async () => {
+    candidates = await donationService.getCandidates();
     donationsData.labels = [];
     candidates.forEach(candidate => {
       donationsData.labels.push(`${candidate.lastName}, ${candidate.firstName}`)
     })
-    candidates.forEach((candidate, i) => {
-      donationList.forEach(donation => {
-        if (donation.candidate._id == candidate._id) {
-          donationsData.datasets[0].values[i] = donation.amount
-        }
-      });
-    });
+    await refreshCharts();
   });
 </script>
 
@@ -65,7 +80,7 @@
   </div>
   <div class="uk-width-1-2@m ">
     <div class="uk-card uk-card-default uk-card-body uk-box-shadow-large uk-width-2xlarge uk-margin">
-      <DonateForm/>
+      <DonateForm {justDonated}/>
     </div>
   </div>
 </div>
