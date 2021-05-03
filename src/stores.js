@@ -32,7 +32,7 @@ export let mainBar = [
     title: "Analysis",
     icon: "fas fa-chart-line fa-3x",
     colour: "color:rgb(149, 93, 176)",
-    link: "/#/donations",
+    link: "/#/analysis",
   },
   {
     title: "Candidates",
