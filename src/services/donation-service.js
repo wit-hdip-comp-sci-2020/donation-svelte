@@ -8,7 +8,7 @@ export class DonationService {
 
   constructor(baseUrl) {
     this.baseUrl = baseUrl;
-    if (localStorage.donation !== 'null') {
+    if (localStorage.donation) {
       axios.defaults.headers.common["Authorization"] = "Bearer " + JSON.parse(localStorage.donation);
     }
   }
