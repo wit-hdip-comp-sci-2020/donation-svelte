@@ -16,6 +16,7 @@
     };
     map = new LeafletMap("donation-map", mapConfig, 'Terrain');
     map.showZoomControl();
+    map.showLayerControl();
   });
 
   title.set("Donation Services Inc.");
