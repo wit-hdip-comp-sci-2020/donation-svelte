@@ -2,7 +2,9 @@
   import 'leaflet/dist/leaflet.css';
   import {mainBar, navBar, subTitle, title} from "../stores"
   import {LeafletMap} from '../services/leaflet-map';
-  import {onMount} from "svelte";
+  import {getContext, onMount} from "svelte";
+
+  const donationService = getContext("DonationService");
 
   let lat = 52.160858;
   let lng = -7.152420;
@@ -17,6 +19,11 @@
     map = new LeafletMap("donation-map", mapConfig, 'Terrain');
     map.showZoomControl();
     map.showLayerControl();
+    const donations = donationService.donationList;
+    donations.forEach(donation=>{
+      const donationStr = `${donation.candidate.firstName} ${donation.candidate.lastName} €${donation.amount.toString()}`;
+      map.addMarker({lat: donation.location.lat, lng: donation.location.lng}, donationStr);
+    });
   });
 
   title.set("Donation Services Inc.");
