@@ -17,12 +17,13 @@
       minZoom: 7,
     };
     map = new LeafletMap("donation-map", mapConfig, 'Terrain');
+    map.addLayerGroup('Donations');
     map.showZoomControl();
     map.showLayerControl();
     const donations = donationService.donationList;
     donations.forEach(donation=>{
       const donationStr = `${donation.candidate.firstName} ${donation.candidate.lastName} €${donation.amount.toString()}`;
-      map.addMarker({lat: donation.location.lat, lng: donation.location.lng}, donationStr);
+      map.addMarker({lat: donation.location.lat, lng: donation.location.lng}, donationStr, 'Donations');
     });
   });
 
