@@ -35,6 +35,12 @@ export let mainBar = [
     link: "/#/analysis",
   },
   {
+    title: "Donation Map",
+    icon: "fas fa-map-marked-alt fa-3x",
+    colour: "rgb(102, 153, 255)",
+    link: "/#/Map",
+  },
+  {
     title: "Candidates",
     icon: "fas fa-clipboard-list fa-3x",
     colour: "color:rgb(63, 122, 139)",

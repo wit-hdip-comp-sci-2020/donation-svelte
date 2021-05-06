@@ -9,21 +9,23 @@
   import Donate from "./pages/Donate.svelte";
   import Analysis from "./pages/Analysis.svelte";
   import Settings from "./pages/Settings.svelte";
+  import Map from "./pages/Map.svelte"
   import Navigator from "./components/Navigator.svelte";
   import Router from "svelte-spa-router";
 
   setContext("DonationService", new DonationService("http://localhost:4000"));
 
   let routes = {
-    "/" : Main,
+    "/": Main,
     "/login": Login,
-    "/signup" : Signup,
+    "/signup": Signup,
     "/candidates": Candidates,
     "/donations": Donations,
     "/donate": Donate,
+    "/map": Map,
     "/analysis": Analysis,
-    "/settings" : Settings,
-    "/logout" : Main
+    "/settings": Settings,
+    "/logout": Main
   }
 </script>
 
