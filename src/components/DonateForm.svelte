@@ -21,7 +21,10 @@
   });
 
   async function donate() {
-    const success = await donationService.donate(amount, methods[selectedMethod], candidateList[selectedCandidate])
+    const success = await donationService.donate(amount, methods[selectedMethod], candidateList[selectedCandidate], {
+      lat: lat,
+      lng: lng
+    })
     if (success) {
       if (justDonated) justDonated(amount, candidateList[selectedCandidate]);
     } else {

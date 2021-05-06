@@ -6,10 +6,10 @@
 <form class="uk-grid-small" uk-grid>
   <div class="uk-width-1-2@s">
     <label class="uk-form-label">Latitude</label>
-    <input class="uk-input" type="text" bind:value={lat}>
+    <input class="uk-input" type="number" bind:value={lat}>
   </div>
   <div class="uk-width-1-2@s">
     <label class="uk-form-label">Longitude</label>
-    <input class="uk-input" type="text" bind:value={lng}>
+    <input class="uk-input" type="number" bind:value={lng}>
   </div>
 </form>

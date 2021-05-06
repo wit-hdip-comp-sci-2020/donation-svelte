@@ -56,17 +56,20 @@ export class DonationService {
       email: "",
       token: ""
     });
+    this.donationList = [];
     axios.defaults.headers.common["Authorization"] = "";
     localStorage.donation = null;
   }
 
-  async donate(amount, method, candidate) {
+  async donate(amount, method, candidate, location) {
     try {
       const donation = {
         amount: amount,
         method: method,
         candidate: candidate,
+        location: location
       };
+      this.donationList.push(donation);
       const response = await axios.post(this.baseUrl + "/api/candidates/" + candidate._id + "/donations", donation);
       return response.status == 200;
     } catch (error) {
