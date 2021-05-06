@@ -14,7 +14,7 @@
     const mapConfig = {
       location: {lat: lat, lng: lng},
       zoom: 8,
-      minZoom: 7,
+      minZoom: 1,
     };
     map = new LeafletMap("donation-map", mapConfig, 'Terrain');
     map.addLayerGroup('Donations');
