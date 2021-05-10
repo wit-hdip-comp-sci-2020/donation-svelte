@@ -23,7 +23,9 @@
     const donations = donationService.donationList;
     donations.forEach(donation=>{
       const donationStr = `${donation.candidate.firstName} ${donation.candidate.lastName} €${donation.amount.toString()}`;
-      map.addMarker({lat: donation.location.lat, lng: donation.location.lng}, donationStr, 'Donations');
+      if (donation.location) {
+        map.addMarker({lat: donation.location.lat, lng: donation.location.lng}, donationStr, 'Donations');
+      }
     });
   });
 
